@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: sans-serif;
+         }
+      #heading{
+             text-align: center;
+             font-size:40px;
+        }
+        h3{ 
+             
+            text-align: center;
+        }
+        #email{
+            font-size:20px;
+            margin-bottom: 15px;
+            color: rgb(7, 6, 6);
+        }
+        input{
+            /* text-align: center; */
+            /* justify-content: center; */
+           width:450px;
+           height: 50px;
+           font-size:20px;
+           margin-bottom: 15px;
+        }
+    
+        #login{
+            text-align: center;
+            justify-content: center;
+           width:300px;
+           height: 50px;
+           border-radius: 20px;
+           background-color: red;
+           color:white;
+         
+           font-size: 30px;
+        }
+        a{
+            font-size:25px;
+            text-decoration: none;
+            color:black;
+            text-align: center;
+          }
+        a:hover{
+            color:blue;
+        }
+        #resetpass{
+            display: flex;
+            justify-content: center;
+            margin-top: 75px;
+        }
+        #cancel{
+            text-align: center;
+        }
+      
+    </style>
+</head>
+<body>
+    <h1 id="heading" >Reset Your Password</h1>
+    <div id="resetpass">
+        <form action="" id="form">
+            <h3>We will send you an email to reset your password.</h3>
+            <div id="email" >Email</div>
+            <input id="emailed" type="email" placeholder="Enter your email here"><br>
+            <input class="btn" type="submit" id="login" value="Submit">
+        </form>
+    </div>
+    <div id="cancel"><a href="login.html">Cancel</a></div>
+   </body>
+</html>
+
+<script>
+     document.querySelector("#form").addEventListener("submit",form);
+    function form(event){
+        event.preventDefault();
+
+        email=document.querySelector("#emailed").value;
+        console.log(email);
+    }
+
+</script>

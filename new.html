@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/1a19b4c1ea.js" crossorigin="anonymous"></script>
+    <style>
+        #slider{
+            display: grid;
+            box-sizing: border-box;
+            width:100%;
+            height:auto;
+            grid-template-columns: auto auto auto;
+            position: relative;
+
+        }
+        #items>div{
+            
+            width:100%;
+            height:100%;
+            display:none;
+        }
+        #items>div>img{
+            width:100%;
+            height: 100%;
+        }
+        #prev{
+            width:70px;
+            height:100%;
+            color: black;
+            position:absolute;
+            display: flex;
+            align-items:center;
+            font-size: 70px;
+            padding: 5px;
+            color:white;
+            font-family:'Courier New', Courier, monospace;
+        }
+        #next{
+            width:70px;
+            height:100%;
+            color: black;
+            position:absolute;
+            left:95%;
+            display:flex;
+            align-items: center;
+            font-size: 70px;
+            color:white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #items{
+            width:100%;
+        }
+        i{
+            font-size: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="slider">
+        <div onclick="prevheader()" id="prev"><</div>
+        <div id="items">
+            <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/boAt_sunburn_wbanner_1512x.jpg?v=1645258239"></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/AB1750_wbanner_aeb06726-6b4d-40dc-9f46-2d0ce87a9bf8_1512x.jpg?v=1645440174"></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/BOB-Web_db63201b-7441-4fd3-ae66-5020c16a2c05_1512x.jpg?v=1645077525"></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Blaze_wbanner_1_1512x.jpg?v=1645157819"></div>
+        </div>
+        <div onclick="nextheader()" id="next">></div>
+    </div>
+    <i class="fa-solid fa-star"></i>
+</body>
+</html>
+<script>
+    var itemhead =1;
+    function prevheader(){
+        if(itemhead==1){
+            itemhead=4;
+        }else{
+            itemhead--;
+        }
+        showItemheader()
+    }
+    function nextheader(){
+        if(itemhead==4){
+            itemhead=1;
+        }else{
+            itemhead++;
+        }
+        showItemheader()
+    }
+    function showItemheader(){
+        var itemshead= document.querySelectorAll("#items>div");
+        for(var i=0;i<itemshead.length;i++){
+            if(i+1==itemhead){
+                itemshead[i].style.display="block";
+            }else{
+                itemshead[i].style.display="none";
+            }
+        }
+    }
+    showItemheader();
+</script>

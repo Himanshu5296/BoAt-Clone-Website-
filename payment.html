@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payement</title>
+    ,<style>
+        body{
+            background-color: black ;
+            font-weight: bolder;
+        }
+        div{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin:auto;
+            margin-top: 50px;
+            width:450px;
+            height: auto;
+            background-color:rgb(253, 107, 107);
+        }
+        label,input{
+            margin:20px;
+            background-color:white;
+            border-radius: 2px;
+            padding: 5px;
+            width:300px;
+        }
+        h1{
+            font-size: 50px;
+            background-color: white;
+            text-align: center;
+        }
+        form{
+            margin:50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Card Details</h1>
+    <div>
+        <form id="form">
+            
+            <label>Card Number</label><br>
+            <input id="cardnumber" type="number"/><br>
+            <label>Cvv</label><br>
+            <input id="cvv" type="number"/><br>
+            <label>Expiry Date</label><br>
+            <input id="expiry" type="date"/><br>
+            <label>Your name</label><br>
+            <input id="name" type="text"/><br>
+            <input id="submit" type="submit"/>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    var arr=JSON.parse(localStorage.getItem("cardDetail"))||[];
+    document.querySelector("#form").addEventListener("submit",function(event){
+     event.preventDefault();
+     var cardnumber= document.querySelector("#cardnumber").value;
+     var cvv= document.querySelector("#cvv").value;
+     var expiry= document.querySelector("#expiry").value;
+     var name= document.querySelector("#name").value;
+     if(cardnumber!=12345678&&cvv!=1234){
+         alert("Incoorect Details");
+     }else{
+        window.location.href="otp.html";
+     }
+    })
+</script>

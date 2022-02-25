@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   #cleb{
+       display:grid;
+       grid-template-columns: repeat(2,1fr);
+       width:100%;
+       box-sizing: border-box;
+   }
+   #left{
+       display:flex;
+       flex-direction: column;
+       height:auto;
+   }
+   #kiara{
+       grid-area: a;
+   }
+   #rahul{
+       grid-area: b;
+   }
+   #aryan{
+       grid-area: c;
+   }
+   #right{
+       display: grid;
+       grid-template-columns: auto auto;
+    grid-template-areas: 
+    "a a"
+    "b c";
+   }
+   #cleb>div>div>img{
+       width:100%;
+       height: auto;
+   }
+   #hardik,#punj,#kiara,#rahul,#aryan{
+        position:relative;
+    }
+    .image_overlay{
+       position: absolute;
+       top:0;
+       left:0;
+       width:100%;
+       height:100%;
+       background: rgba(0,0,0,0.6);
+       color:#ffffff;
+       font-family: 'Quicksand',sans-serif;
+       display:flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       opacity: 0;
+       transition: opacity 0.25s;
+    }
+    .image_overlay--blur{
+        backdrop-filter: blur(5px) ;
+    }
+    .image_overlay >*{
+        transform: translateY(20px);
+        transition: transform 0.25s;
+    }
+    .image_overlay:hover{
+      opacity: 1;
+    }
+    .image_overlay:hover>*{
+        transform: translateY(0);
+    }
+    .image_title{
+        font-size:2.5em;
+        font-family:sans-serif
+    }
+    .image_description{
+        font-size:0.8 em;
+
+        margin-top:10px;;
+        padding:0px 40px;
+    }
+    .centered {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    color:white;
+    font-family: sans-serif;
+    }
+    @media all and (min-width:50px) and (max-width:750px){
+        #cleb{
+            grid-template-columns: auto;
+        }
+    }
+  
+    </style>
+</head>
+
+<body>
+    <div id="cleb">
+        <div id="left">
+            <div id="hardik">
+                <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Sports_900x.jpg?v=1605624529 "/>
+                <div class="centered">Sports</div>
+                <div class="image_overlay image_overlay--blur">
+                     <div class="image_title">Sports</div>
+                     <p class="image_description">
+                         Water and sweat resistant, light and secure fit makes them ideal for outdoor sports or workouts.
+                     </p>
+                 </div>
+            </div>
+            <div id="punj">
+                <img  src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Travel_900x.jpg?v=1605624529">
+                <div class="centered">Travel</div>
+                <div class="image_overlay image_overlay--blur">
+                    <div class="image_title">Travel</div>
+                    <p class="image_description">
+                        Comfortable for long flights and drives with ergonomic, snug fit and long lasting battery life.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+        <div id="right">
+            <div id="kiara">
+                <img  src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Fashion_900x.jpg?v=1605624529" />
+                <div class="centered">Fashion</div>
+            <div class="image_overlay image_overlay--blur">
+                <div class="image_title">Fashion</div>
+                <p class="image_description">Designs that keep up with the latest trends with vibrant & unique colours.</p>
+            </div>
+            </div>
+            <div id="rahul">
+                <img  src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Affordable_cbbe72cb-075e-425a-8582-483a849ab8d6_460x.jpg?v=1640170618">
+                <div class="centered"> &nbsp; All Time Favourites</div>
+                <div class="image_overlay image_overlay--blur">
+                    <div class="image_title">&nbsp All Time <br> Favourites</div>
+                    <p class="image_description"> Your most favourites at the most incredible prices.</p>
+                </div>
+            </div>
+            <div id="aryan">
+                <img  src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/WFH_460x.jpg?v=1605624529">
+                <div class="centered">WFH</div>
+            <div class="image_overlay image_overlay--blur">
+                <div class="image_title">WFH</div>
+                <p class="image_description"> Comfortable ear wear suitable for working from home, with battery life that easily lasts an entire day full of calls </p>
+            </div>
+            </div>
+        </div>
+    </div>
+
+     
+
+</body>
+
+</html>

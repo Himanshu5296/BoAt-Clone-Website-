@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        body{
+            background-color: black;
+            font-family: sans-serif;
+        }
+        #cartbox{
+            display:flex;
+            flex-wrap: wrap;
+            width:100%;justify-content: center;
+            margin-top: 25px;
+        }
+        #cartbox>div>h3{
+            text-align: center;
+        }
+        #cartbox>div{
+            
+            margin: 10px;
+            border-radius: 5px;
+            height: auto;
+        }
+        #cartbox>div>img{
+            height:60%;
+            width:100%;
+        }
+        h3+div{
+            display:flex;
+            justify-content:space-evenly;
+            margin-top: -20px;
+        }
+        h3+div>p:first-child{
+            color:red;
+            font-size: 20px;
+        }
+        h3+div>p:nth-child(2){
+            color:gray;
+            
+            margin-top:23px;
+        }
+        h3+div>div>button{
+            height:46%;
+            color:black;
+            background-color: white;
+            border: none;
+            font-size: 20px;
+        }
+        h3+div>div{
+            align-items: center;
+        }
+        h3+div>div>p{
+            border: 1px  solid black;
+            padding:4px;
+            font-size: 20px;
+            color:gray;
+        }
+        .asa{
+            background-color: whitesmoke;
+            height: auto;
+            width: 100%;
+            padding-top: 2%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding-left: 10%;
+            box-sizing: border-box;
+            /* text-align:right; */
+
+            /* display: flex; */
+            /* justify-content: center; */
+        }
+        #apply{
+            border-radius: 12px;
+            
+        }
+        #bbt{
+            background-color: red;
+            color: white;
+            height: 45px;
+            border-radius: 5px;
+            width:30%;
+            /* color: red; */
+           
+
+        }
+        #bbts{
+            display: flex;
+            justify-content: center;
+        }
+        #bbs{
+            color: red;
+        }
+        #btn2{
+            background-color: red;
+            color: white;
+            padding: 5px ;
+            /* width: 20.5%; */
+            border-radius: 8px;
+            font-size: 15px;
+            width:30%;
+            margin-bottom: 50px;
+        }
+       #promocode{
+           padding:2px;
+           width:20%;
+       }
+
+       #navbar{
+            width:100%;
+            height: 80px;
+            display:grid;
+            grid-template-columns: 130px auto auto auto;
+            background-color: black;
+            color:white;
+            align-items: center;
+            justify-content: space-around;
+            
+            gap:30px;
+            box-sizing: border-box;
+        }
+        #navbar>div>img{
+            height:100%;
+            width:100%;
+        }
+        #nlogo{
+            height: 70%;
+        }
+        #mnav{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap:20px;
+        }
+        #mnav>h4{
+          border-left: 2px solid red;
+          padding-left: 10px;
+        }
+        #mnav>select{
+            background-color: black;
+            color:white;
+            font-weight: bolder;
+            font-size: 17px;
+            border: none;
+
+        }
+        #deal{
+            border-right: 2px solid red;
+            padding-right: 10px;
+        }
+        #nfont{
+            display:grid;
+            grid-template-columns: auto auto auto;
+            gap:20px;
+        }
+        #nfont>i{
+            font-size: 20px;
+            
+        }
+        #more{
+            width:70px;
+        }
+        #navbar>div>input{
+         width:100%;
+         height: auto;
+         padding: 10px;
+         border-radius: 50px;
+         font-size: 20px;
+        }
+
+        #mfooter{ 
+    display:grid;
+    gap:20px;
+    width:90%;
+    grid-template-columns: auto auto auto auto;
+    margin: auto;
+    color:white;
+}
+#ficon{
+  display:grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: space-evenly;
+  width:25%;
+  margin-left:5%;
+}
+#pay{
+    margin-left: 5%;
+}
+#ficon>i{
+    color:white;
+    font-size: 25px;
+    margin:5px;
+}
+#mfooter>div>button{
+    padding:4px 10px;
+    border: 1px solid red;
+    border-radius: 3px;
+    background-color: black;
+    color:aliceblue;
+}
+#mfooter>div>button:hover{
+ background-color: red;
+}
+
+#mfooter>div>input{
+    padding: 4px 10px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    background-color: black;
+}
+        @media all and (min-width:50px) and (max-width:600px){
+         #mnav>h4{
+             font-size: 10px;
+             padding:auto 3px;
+             margin: auto 0px;
+         }
+         #mnav>select{
+             font-size: 10px;
+             margin:  auto 0px;
+         }
+         #nlogo{
+             margin-left: 60px;
+         }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar">
+        <div id="nlogo">
+            <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Boat-Logo_200x_137f5a28-b960-4963-b1fd-e91c60e436a9_200x.png?v=1640587883" alt="logo">
+        </div>
+       <div id="mnav">
+          <select id="shop">
+              <option value="">Shop</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+          </select>
+          <h4>boAt X Sunburn</h4>
+          <h4 id="deal">Daily Deals</h4>
+          <select id="more">
+              <option value="">More</option>
+              <option value="">Gifting</option>
+              <option value="">Offer Zone</option>
+              <option value="">Do what floats you boAt</option>
+              <option value="">Meet the boAt heads</option>
+              <option value="">Earn Rs 500</option>
+          </select>
+       </div>
+       <div>
+           <input placeholder="Search">
+       </div>
+       <div id="nfont">
+        <i class="fa-solid fa-gift mygift"></i>
+        <i class="fa-solid fa-user user" onclick="login()"></i>
+        <i class="fa-solid fa-cart-shopping mycart" onclick="mycart()"></i>
+
+       </div>
+    </div>
+    <div id ="cartbox">
+    </div> 
+   <!-- <div id="cartitem">
+
+   </div> -->
+    <div class="asa">
+
+    <h3>PROMO CODE</h3>
+    <input id="promocode" value="" placeholder="Enter Coupon Code">
+    <button id="apply" onclick="applycode()">Apply</button>
+    <h3>Subtotal:</h3>
+    <h3 id="total"></h3>
+    <p>Or 3 interest-free payments of Rs. 166 with <img src="https://assets.zestmoney.in/assets/widget/zest-logo-name-info.svg" alt=""></p>
+
+    <!-- <div id="btts"> -->
+    <h2 id="bbs">Continue Shopping</h2>
+    <button id="bbt">PAY VIA CRADIT/DEBIT CARD/OTHERS</button>
+   <br>
+   <br>
+    <button id="btn2" onclick="payment()">CASH ON DELIVERY/UPI <img src="https://cdn.gokwik.co/v4/images/upi-icons.svg" alt=""></button>
+</div>
+<div id = "mfooter" >
+    <div>
+        <img id="blogo" src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Boat-Logo_200x_137f5a28-b960-4963-b1fd-e91c60e436a9_200x.png?v=1640587883" alt="img"/>
+        <p>Subscribe to email alerts.we promise not to spam<br>inbox.</p>
+        <input type="text" id="email" placeholder="Email Address*">
+        <button id="btn1">Subscribe</button>
+    </div>
+    <div class="list">
+        <h3>SHOP</h3>
+        <p>True Wireless Earbuds<p></p>
+        <p>Wireless Headphones</p>
+        <p>Wired Headphones</p>
+        <p>Wireless Speaker</p>
+        <p>Home Audio</p>
+        <p>Mobile Accessories</p>
+        <p>SMart Watch</p>
+        <p>TRebel</p>
+        <p>Misfit</p>
+        <p>Gift Card</p>
+        <p> Rock in India</p>
+        <p>Earn Rs.100</p>
+    </div>
+    <div class="list">
+        <h3>HELP</h3>
+        <p>Track Your Order</p>
+        <p>Warranty & Support</p>
+        <p>Return Policy</p>
+        <p>Services Centers</p>
+        <p>Bulk Orders</p>
+        <p>FAQs</p>
+        <p>Why Buy Direct</p>
+    </div>
+    <div class="list">
+        <h3>COMPANY</h3>
+        <p>About boAt</p>
+        <p>News</p>
+        <p>Read Our Blog</p>
+        <p>Security</p>
+        <p>Terms of Services</p>
+        <p>Privacy policy</p>
+        <p>Partner Offer T&Cs</p>
+        <p>Investor Relations</p>
+    </div>
+</div>
+<div id="ficon">
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-brands fa-facebook-square"></i>
+    <i class="fa-brands fa-youtube"></i>
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-linkedin"></i>
+</div>
+<div id="pay"><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Fotter_payment_icn_2_460x.png?v=1632725578"> </div>
+</body>
+</html>
+
+<script>
+    var cart=JSON.parse(localStorage.getItem("cartitem"))||[];
+    
+    displaycart(cart);
+    showtotal();
+
+  function displaycart(arr){
+    document.querySelector("#cartbox").innerHTML="";
+    arr.map(function(el,index,arr){
+        var innerbox=document.createElement("div");
+        var bimg=document.createElement("img");
+        bimg.setAttribute("src",el.img);
+        var bname=document.createElement("h3");
+        bname.innerText= el.name;
+        var pricebox=document.createElement("div");
+        var bprice=document.createElement("p");
+        bprice.innerText= "Rs."+ el.price;
+        var bstprice=document.createElement("p");
+        bstprice.style.textDecoration="line-through"
+       
+        bstprice.innerText= "Rs."+el.stprice;
+        var qtybox= document.createElement("div");
+        qtybox.style.display="flex";
+        var btn1= document.createElement("button");
+        btn1.innerText="-";
+        var qty = document.createElement("p");
+        qty.innerText= el.qty;
+        var btn2 = document.createElement("button");
+        btn2.innerText="+";
+        btn1.addEventListener("click",function(){
+            document.querySelector("#promocode").value="";
+            if(el.qty>0){
+            arr[index].qty--;
+            }
+            localStorage.setItem("cartitem",JSON.stringify(arr));
+            displaycart(arr);
+            showtotal();
+        })
+        btn2.addEventListener("click",function(){
+            document.querySelector("#promocode").value="";
+            arr[index].qty++;
+            localStorage.setItem("cartitem",JSON.stringify(arr));
+            displaycart(arr);
+            showtotal();
+        })
+        qtybox.append(btn1,qty,btn2);
+        pricebox.append(bprice,bstprice,qtybox);
+        innerbox.append(bimg,bname,pricebox);
+        document.querySelector("#cartbox").append(innerbox);
+    })
+  }
+
+ 
+  function showtotal(){
+    var totalamount=cart.reduce(function(acc,el){
+      return acc + el.price*el.qty;
+    },0)
+   document.querySelector("#total").innerText=totalamount;
+  }
+ 
+  function applycode(){
+      var inputcode = document.querySelector("#promocode").value;
+      if(inputcode="boat30"){
+        var oldtotal= document.querySelector("#total").innerText;
+          document.querySelector("#total").innerText= Math.round(Number(oldtotal)*0.7);
+      }
+  }
+
+  function mycart(){
+      window.location.href="cart.html"
+    }
+    function login(){
+        window.location.href="login.html"
+    }
+    function payment(){
+        window.location.href="payment.html";
+    }
+
+</script>

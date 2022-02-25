@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immortal Gaming</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #immortalContainer{
+            display:grid;
+            grid-template-columns: repeat(3,30%);
+            grid-template-rows:repeat(2,420px);
+            gap:15px;
+            justify-content: center;
+        }
+        #immortalContainer>div{
+            border:1px solid black;
+            border-radius: 10px;
+            background-color: white;
+        }
+        #immortalHeading{
+            font-family: sans-serif;
+            padding-left: 4%;
+            color:white;
+        }
+        #imageTop{
+            min-height: 255px;
+            min-width: 255px;
+            margin:auto;
+            text-align: center;
+            background-color: silver;
+            border-radius: 10px;
+        }
+        #immortalName{
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-family: sans-serif ;
+            color:red;
+            padding-left:20px;
+
+        }
+        .priceDiv{
+            width: 30%;
+            display:flex;
+            justify-content: space-between;
+            padding-left:20px;
+        }
+        #immortalCart{
+            background-color: black;
+            color:white;
+            font-family: sans-serif;
+            border: 1px solid #000000;
+            font-weight: bold;
+            min-height: 48px;
+            border-radius: 10px;
+            min-width:40%;
+            font-size:16px;
+            margin-left:20px;
+        }
+        #immortalBottom>h2{
+            text-align:center;
+            color: #9c9c9c;
+            font-family: sans-serif;
+            padding:5% 0px 2% 0px
+        }
+        #immortalBottom>p{
+            text-align:justify;
+            color: #9c9c9c;
+            font-family: sans-serif;
+            padding:0px 5.5%;
+        }
+        /* small screen */
+        @media all and (min-width:50px) and (max-width:380px){
+            #immortalContainer{
+                display:grid;
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows:repeat(5,420px);
+            }
+        }
+        /* medium screen */
+        @media all and (min-width:381px) and (max-width:800px){
+            #immortalContainer{
+                display:grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows:repeat(3,420px);
+            }
+        }
+       
+    </style>
+</head>
+<body>
+    <img style="width: 100%;height: auto" src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Immortal-Catgry_web.jpg?v=1634903645"/>
+    <h1 id="immortalHeading">Immortal Gaming</h1>   
+    <div id="immortalContainer"></div>
+    
+    <div  id="immortalBottom">
+        <h2>Own Every Match with Immortal Gaming Headphones</h2>
+        <p>The Immortal collection is here to give you an enthralling gaming experience through our powerful gaming headphones. These revolutionary gaming headphones will change the way you play games, making them 10x better! The sound of a headshot is about to get sweeter as you unleash the gamer in you and level up with Immortal gaming headphones.</p>
+        <p>The 7.1 Channel Surround Sound will lead you on your way to victory. The wired gaming headphones also come with Dolby Atmos to provide you a theatre-like experience. Let your game become a reality that you can live and feel with Easy Audio & Mic Driver Customization that isolates the noise, rendering you focused on your game.</p>
+        <p>Unleash the gamer in you with Immortal 1000D and Immortal 200, for the journey to glory has just begun. Fasten your seatbelts as the 50mm drivers can sweep you off your feet with super amazing performance! And the RGB LEDs on the earmuffs arena will celebrate with you as you find and destroy every enemy camp, leaving your friends agape. Conquer every game with a sound that provides position accuracy! With a noise-isolation mic, these powerful headphones will unlock the highest level of gaming for you. Play for longer hours with no discomfort owing to their lightweight and ergonomically built. These headphones are here to rule, just like you. So now, don’t just win. Win with a roar, embracing the legend that you are with these beast gaming headphones.</p>
+    </div>
+</html>
+
+<script>
+
+var immortal = [
+    { image :"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-700_255x255.png?v=1643632678",
+       name : "boAt Immortal 400",
+       reducePrice : 1990,
+       price : 6990
+    },
+    { image:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/IM1300_main_4_255x255.png?v=1632715015",
+      name :"boAt Immortal 1300",
+      reducePrice : 3499.00 ,
+      price: 9990.00
+    },
+    { image:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/2_f3aa2756-01f3-4e39-80bc-7b4f6551c7aa_255x255.png?v=1625748159",
+      name :"boAt Immortal 1000D",
+      reducePrice : 2499.00 ,
+      price: 5990.00
+    },
+    { image:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_65ff249b-c4f8-4dad-ae88-2aae76723ce2_255x255.png?v=1643477993",
+      name :"boAt Immortal 700",
+      reducePrice : 2499.00,
+      price:6990.00
+    },
+    { image:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-b_255x255.png?v=1625748090",
+      name :"boAt Immortal 200",
+      reducePrice : 1499.00,
+      price:4990.00
+    }
+]
+ 
+localStorage.setItem("ImmortalGaming",JSON.stringify(immortal));
+   var immortalGame  = JSON.parse(localStorage.getItem("ImmortalGaming"))
+   var cartArr = JSON.parse(localStorage.getItem("CartItems")) || [];
+
+   displayData(immortalGame);
+   
+   function displayData(immortalGame){
+
+    immortalGame.map(function(elem) {
+
+    var mainDiv = document.createElement("div");
+
+    var image = document.createElement("div")
+    image.setAttribute("id","imageTop")
+    var img = document.createElement("img");
+    img.setAttribute("src", elem.image);
+    img.setAttribute("id","immortalImage")
+    image.append(img)
+
+    var name = document.createElement("p");
+    name.innerText = elem.name;
+    name.setAttribute("id","immortalName")
+
+    var innerDiv = document.createElement("div");
+
+    var reduceprice = document.createElement("p");
+    reduceprice.innerText = elem.reducePrice;
+
+    var price = document.createElement("p");
+    price.innerText = elem.price;
+    price.style.textDecoration = "line-through";
+
+    innerDiv.append(reduceprice, price);
+    innerDiv.setAttribute("class", "priceDiv");
+
+    var cart = document.createElement("button");
+    cart.innerText = "Add to cart";
+    cart.setAttribute("id","immortalCart")
+    cart.addEventListener("click", function () {
+      addToCart(elem);
+    });
+
+    mainDiv.append(image, name, innerDiv,cart);
+
+    document.querySelector("#immortalContainer").append(mainDiv);
+    });
+
+   function addToCart(data){
+       console.log(data);
+       cartArr.push(data);
+       console.log(cartArr);
+       localStorage.setItem("CartItems",JSON.stringify(cartArr));
+   }
+   }
+
+</script>

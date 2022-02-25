@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/7a27244389.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="navbar">
+        <div id="nlogo">
+            <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Boat-Logo_200x_137f5a28-b960-4963-b1fd-e91c60e436a9_200x.png?v=1640587883" alt="logo">
+        </div>
+       <div id="mnav">
+          <select id="shop" onChange="window.location.href=this.value">
+              <option value="">Shop</option>
+              <option value="immotal.html">Immortal</option>
+              <option value="watch.html">Watch</option>
+              <option value="trending.html">Trending</option>
+          </select>
+          <h4>boAt X Sunburn</h4>
+          <h4 id="deal" onclick="dealitem()">Daily Deals</h4>
+          <select id="more">
+              <option value="">More</option>
+              <option value="">Gifting</option>
+              <option value="">Offer Zone</option>
+              <option value="">Do what floats you boAt</option>
+              <option value="">Meet the boAt heads</option>
+              <option value="">Earn Rs 500</option>
+          </select>
+       </div>
+       <div>
+           <input placeholder="Search">
+       </div>
+       <div id="nfont">
+        <i class="fa-solid fa-gift mygift"></i>
+        <i class="fa-solid fa-user user" onclick="login()"></i>
+        <i class="fa-solid fa-cart-shopping mycart" onclick="mycart()"></i>
+
+       </div>
+    </div>
+    <div id="slider">
+        <div onclick="prevheader()" id="prev"><</div>
+        <div id="items">
+            <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/boAt_sunburn_wbanner_1512x.jpg?v=1645258239"></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/AB1750_wbanner_aeb06726-6b4d-40dc-9f46-2d0ce87a9bf8_1512x.jpg?v=1645440174"></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/BOB-Web_db63201b-7441-4fd3-ae66-5020c16a2c05_1512x.jpg?v=1645077525"></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Blaze_wbanner_1_1512x.jpg?v=1645157819"></div>
+        </div>
+        <div onclick="nextheader()" id="next">></div>
+    </div>
+    <marquee>FLAUNT YOUR FITNESS <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;FLAUNT YOUR FITNESS</span></marquee>
+    <h1 class="productheading">Best Sellers</h1>
+    <div class="bestsellerbox">
+     <div class="slide"><p onclick="prev()"><</p></div>
+     <div class="imgbox">
+        
+     </div>
+     <div class="slide"><p onclick="next()">></p></div>
+    </div>
+    <h1 class="productheading">boAt X SunBurn</h1>
+    <div class="bestsellerbox">
+     <div class="slide"><p onclick="prev1()"><</p></div>
+     <div class="burnimgbox">
+        
+     </div>
+     <div class="slide"><p onclick="next1()">></p></div>
+    </div>
+    <h1 class="productheading">Just launched</h1>
+    <div class="bestsellerbox">
+        <div class="slide"><p onclick="prev2()"><</p></div>
+        <div class="justimgbox">
+           
+        </div>
+        <div class="slide"><p onclick="next2()">></p></div>
+    </div>
+    <h1 class="productheading">Smart Watches</h1>
+    <div class="bestsellerbox">
+        <div class="slide"><p onclick="prev3()"><</p></div>
+        <div class="watchimgbox">
+           
+        </div>
+        <div class="slide"><p onclick="next3()">></p></div>
+    </div>
+    <h1 class="productheading">Boat Wireless</h1>
+    <div class="bestsellerbox">
+        <div class="slide"><p onclick="prev4()"><</p></div>
+        <div class="lessimgbox">
+           
+        </div>
+        <div class="slide"><p onclick="next4()">></p></div>
+    </div>
+    <h1 class="productheading">Boat Wired</h1>
+    <div class="bestsellerbox">
+        <div class="slide"><p onclick="prev5()"><</p></div>
+        <div class="wireimgbox">
+           
+        </div>
+        <div class="slide"><p onclick="next5()">></p></div>
+    </div>
+
+    <div id="cleb">
+        <div id="left">
+            <div id="hardik">
+                <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Sports_900x.jpg?v=1605624529 "/>
+                <div class="centered">Sports</div>
+                <div class="image_overlay image_overlay--blur">
+                     <div class="image_title">Sports</div>
+                     <p class="image_description">
+                         Water and sweat resistant, light and secure fit makes them ideal for outdoor sports or workouts.
+                     </p>
+                 </div>
+            </div>
+            <div id="punj">
+                <img  src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Travel_900x.jpg?v=1605624529">
+                <div class="centered">Travel</div>
+                <div class="image_overlay image_overlay--blur">
+                    <div class="image_title">Travel</div>
+                    <p class="image_description">
+                        Comfortable for long flights and drives with ergonomic, snug fit and long lasting battery life.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+        <div id="right">
+            <div id="kiara">
+                <img  src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Fashion_900x.jpg?v=1605624529" />
+                <div class="centered">Fashion</div>
+            <div class="image_overlay image_overlay--blur">
+                <div class="image_title">Fashion</div>
+                <p class="image_description">Designs that keep up with the latest trends with vibrant & unique colours.</p>
+            </div>
+            </div>
+            <div id="rahul">
+                <img  src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Affordable_cbbe72cb-075e-425a-8582-483a849ab8d6_460x.jpg?v=1640170618">
+                <div class="centered"> &nbsp; All Time Favourites</div>
+                <div class="image_overlay image_overlay--blur">
+                    <div class="image_title">&nbsp All Time <br> Favourites</div>
+                    <p class="image_description"> Your most favourites at the most incredible prices.</p>
+                </div>
+            </div>
+            <div id="aryan">
+                <img  src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/WFH_460x.jpg?v=1605624529">
+                <div class="centered">WFH</div>
+            <div class="image_overlay image_overlay--blur">
+                <div class="image_title">WFH</div>
+                <p class="image_description"> Comfortable ear wear suitable for working from home, with battery life that easily lasts an entire day full of calls </p>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 id="boatBlog"><a href="">boAt Blog</a></h2>
+        <div id="blogContainer">
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Earphone_1296x_386bed9a-346e-4cb5-bad9-c075cc0b170c_460x.jpg?v=1633939293"/>
+                <h3>
+                <a href="earphonesBuyingGuide.html">Earphones Buying Guide - Everything You Need To Know</a>
+                </h3>
+                <br>
+                <button onclick="window.location.href='earphonesBuyingGuide.html'">Read more</button>
+            </div>
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Main-banner_520x500_6852bb3b-c6d3-4588-8df9-2075ffada63a_460x.jpg?v=1639552370"/>
+                <h3>
+                <a href="theUltimateSmartwatchGuide.html">The Ultimate Smartwatch Guide - Get The World On Your Wrist</a>
+                </h3>
+                <br>
+                <button onclick="window.location.href='theUltimateSmartwatchGuide.html'">Read more</button>
+            </div>
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/articles/BLOG2_460x.jpg?v=1645630699"/>
+                <h3>
+                <a href="yourGuidetoWatchBlaze.html">Your Guide to Watch Blaze: Inside the Anatomy of a Speed Demon</a>
+                </h3>
+                <br>
+                <button onclick="window.location.href='yourGuidetoWatchBlaze.html'">Read more</button>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="productheading">What They Say About Us:</h1>
+    <div id="news-section">
+        <div >
+            <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1500_285a895e-72fd-4d8e-85d6-1b8e173d09f7_360x.png?v=1629710195">
+            <p id="para2">"It is value for money,best sound especially bass"</p>
+            <p id="para2">SAREN MOHIL</p>
+            <button>Shop now</button>
+       </div>
+
+        <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/255-pro_360x.png?v=1629710195">
+            <p id="para2">"The battery backup is something unbelievable"</p>
+            <p id="para2">NAMSHAD K N</p>
+            <button>shop now</button>
+        </div>
+
+        <div>
+            <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/381_360x.png?v=1629710195">
+            <p id="para2">"Amazing product,great sound quality and performance "</p>
+            <p>ASHITH</p>
+            <button>shop now</button>
+        </div>
+    </div>
+    <h1 class="productheading">In The Press</h1>
+    <marquee id="pressup" direction="right" behavior="alternate">How boAt became the fifth largest wearable brand in the world</marquee>
+    <div id="media">
+        <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/mint.png?v=1610353880"> </div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Forbes_1.png?v=1610015636"> </div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/techradar_1.png?v=1610015636"></div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/ET_1.png?v=1610015636"> </div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/gadgets360_1.png?v=1610015636"> </div>
+    </div>
+    <div id="last2">
+       <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Fotter-Awards_11-02-2022_1080x.png?v=1644572316"> 
+    </div>
+    <marquee>No.1 Hearable Brand in India <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;No.1 Hearable Brand in India</span></marquee>
+    <div class="div2">
+        <div class="d">
+            <img class="img1"src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/group_186_3x_4616a7a4-8c24-4065-a237-54e3d574bb94.png?v=1611132367" alt="">
+            <h3>Free shoping</h3>
+        </div>
+    
+        <div class="d">
+           <img class="img1"src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/vector_3x_50a1233e-95d9-4e18-9e8e-757b545e2c06.png?v=1611132367" alt="">
+           <h3>Exclusive Deals </h3>
+        </div>
+    
+       <div class="d">
+           <img class="img1"src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/vector_2_2x_9d5071e2-154a-4f06-b660-9d0430a18248.png?v=1611132367" alt="">
+           <h3>Secure Checkout</h3>
+        </div>
+    </div>
+    <div id="f1">
+        <p>India's Fastest Growing Audio & Wearables Brand. The Most Incredible Range Of Wireless Earphones, Earbuds, Headphones Smart Watches, And Home
+            Audio. Form Workout To Adventures, BoAt Willget You Sailling!</p>
+    </div>
+    <div id = "mfooter" >
+        <div>
+            <img id="blogo" src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Boat-Logo_200x_137f5a28-b960-4963-b1fd-e91c60e436a9_200x.png?v=1640587883" alt="img"/>
+            <p>Subscribe to email alerts.we promise not to spam<br>inbox.</p>
+            <input type="text" id="email" placeholder="Email Address*">
+            <button id="btn1">Subscribe</button>
+        </div>
+        <div class="list">
+            <h3>SHOP</h3>
+            <p>True Wireless Earbuds<p></p>
+            <p>Wireless Headphones</p>
+            <p>Wired Headphones</p>
+            <p>Wireless Speaker</p>
+            <p>Home Audio</p>
+            <p>Mobile Accessories</p>
+            <p>SMart Watch</p>
+            <p>TRebel</p>
+            <p>Misfit</p>
+            <p>Gift Card</p>
+            <p> Rock in India</p>
+            <p>Earn Rs.100</p>
+        </div>
+        <div class="list">
+            <h3>HELP</h3>
+            <p>Track Your Order</p>
+            <p>Warranty & Support</p>
+            <p>Return Policy</p>
+            <p>Services Centers</p>
+            <p>Bulk Orders</p>
+            <p>FAQs</p>
+            <p>Why Buy Direct</p>
+        </div>
+        <div class="list">
+            <h3>COMPANY</h3>
+            <p>About boAt</p>
+            <p>News</p>
+            <p>Read Our Blog</p>
+            <p>Security</p>
+            <p>Terms of Services</p>
+            <p>Privacy policy</p>
+            <p>Partner Offer T&Cs</p>
+            <p>Investor Relations</p>
+        </div>
+    </div>
+    <div id="ficon">
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-facebook-square"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin"></i>
+    </div>
+    <div id="pay"><img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Fotter_payment_icn_2_460x.png?v=1632725578"> </div>
+</body>
+</html>
+
+<script src="index.js"></script>
+
+

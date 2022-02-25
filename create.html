@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+      #heading{
+             text-align: center;
+             /* margin-bottom: 100px; */
+             font-size:40px;
+        }
+        #email{
+            text-align: center;
+            font-size:20px;
+            margin-bottom: 15px;
+            color: rgb(24, 23, 23);
+        }
+        input{
+            /* text-align: center;
+            justify-content: center; */
+           width:450px;
+           height: 50px;
+           font-size:20px;
+           margin-bottom: 15px;
+        }
+        #pass{
+            text-align: center;
+            font-size:20px;
+            margin-bottom: 15px;
+            color: rgb(51, 50, 50);
+        }
+        #login{
+            text-align: center;
+            justify-content: center;
+           width:460px;
+           height: 50px;
+           border-radius: 10px;
+           background-color: red;
+           color:white;
+           margin-top: 15px;
+           /* margin-bottom: 30px; */
+           font-size: 30px;
+        }
+        a{
+            margin-left: 45%;
+            font-size:20px;
+            margin-bottom: 15px;
+        
+        }
+        #lastline{
+            text-align: center;
+        }
+        #signup{
+          display: flex;
+          justify-content: center;
+        }
+        label{
+            font-size: 20px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="heading" >Create Account</h2>
+    <div id="signup">
+        <form action="" id="form">
+            <label>First Name</label><br>
+            <input  id="first" type="text" placeholder="Enter your first name"><br>
+            <label>Last Name</label><br>
+            <input id="last" type="text" placeholder="Enter your last name"><br>
+            <label>Email</label><br>
+            <input id="emaill" type="email" placeholder="Enter your email here"><br>
+       
+            <label>Password</label><br>
+            <input id="password" type="password"  placeholder="Enter Password"><br>
+            <input class="btn" type="submit" id="login" value="Create">
+            <div id="lastline">Login with an exciting account</div>
+        </form>
+    </div>
+ 
+     
+   </body>
+</html>
+
+<script>
+document.querySelector("form").addEventListener("submit",myform);
+createarr=JSON.parse(localStorage.getItem("createdetails"))||[];
+function myform(event){
+    event.preventDefault();
+    var createobj={
+        first:document.querySelector("#first").value,
+        last:document.querySelector("#last").value,
+        email:document.querySelector("#emaill").value,
+        password:document.querySelector("#password").value,
+    };
+    console.log(createobj);
+    createarr.push(createobj);
+    console.log(createarr);
+    localStorage.setItem("createdetails",JSON.stringify(createarr));
+
+    document.querySelector("input[type='submit']").addEventListener("click",function(){
+           window.location.href="login.html";
+          });
+
+};
+</script>
