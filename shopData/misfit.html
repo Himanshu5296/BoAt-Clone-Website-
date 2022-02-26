@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misfit-Best Trimmers for Men</title>
+</head>
+<style>
+        body{
+        background-color: #000000;
+        }
+        #misfitContainer{
+        display:grid;
+        grid-template-columns: repeat(3,30%);
+        grid-template-rows:repeat(2,420px);
+        gap:15px;
+        justify-content: center;
+        }
+        #misfitContainer>div{
+        border:1px solid black;
+        border-radius: 10px;
+        background-color: white;
+        }
+        #misfitHeading{
+            font-family: sans-serif;
+            padding-left: 4%;
+            color:white;
+        }
+        #imageTop{
+            min-height: 255px;
+            min-width: 255px;
+            margin:auto;
+            text-align: center;
+            background-color: silver;
+            border-radius: 10px;
+        }
+        #misfitName{
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-family: sans-serif ;
+            color:red;
+            padding-left:20px;
+
+        }
+        .priceDiv{
+            width: 40%;
+            display:flex;
+            justify-content: space-between;
+            padding-left:20px;
+        }
+        #misfitCart{
+            background-color: black;
+            color:white;
+            font-family: sans-serif;
+            border: 1px solid #000000;
+            font-weight: bold;
+            min-height: 48px;
+            border-radius: 10px;
+            min-width:40%;
+            font-size:16px;
+            margin-left:20px;
+        }
+        #misfitBottom>h2{
+            text-align:center;
+            color: #9c9c9c;
+            font-family: sans-serif;
+            padding:5% 0px 2% 0px
+        }
+        #misfitBottom>p{
+            text-align:justify;
+            color: #9c9c9c;
+            font-family: sans-serif;
+            padding:0px 5.5%;
+        }
+        #sorting{
+            text-align: right;
+            padding-right:12%;
+            margin-bottom: 1%;
+        }
+        #sorting>label{
+            padding-right: 10px;
+            font-size: 16px;
+            color: #8b8b8b;
+            text-transform: uppercase;
+            text-align: right;
+            font-family: sans-serif;
+        }
+        #sorting>select{
+            background: black;
+            font-size: 16px;
+            color: white;
+            border-color: black;
+        }
+        /* small screen */
+        @media all and (min-width:50px) and (max-width:380px){
+            #misfitContainer{
+                display:grid;
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows:repeat(5,420px);
+            }
+        }
+        /* medium screen */
+        @media all and (min-width:381px) and (max-width:800px){
+            #misfitContainer{
+                display:grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows:repeat(3,420px);
+            }
+        }
+</style>
+<body>
+  <img style="width: 100%;height: auto" src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/MISFIT-T200_Catgry_Web.jpg?v=1634806683"/>
+    <h1 id="misfitHeading">Misfit - Best Trimmer for Men</h1>  
+    <div id="sorting">
+        <label>SORT BY</label>
+        <select onchange="sortItems()" id="sorter">
+            <option value="">Featured</option>
+            <option value="l2h">Price, low to high</option>
+            <option value="h2l">Price, high to low</option>
+        </select>
+       </div> 
+  <div id="misfitContainer"></div>
+
+  <div id="misfitBottom">
+    <h2>Misfit - Personal Grooming for Men</h2>
+    <p>Let the red carpet roll while you stay agape and try to catch your breath as boAt launches another trailblazing category! But guess what? This time it isn't audio wear. Sit tight as boAt Misfit - Personal Grooming for Men is here to sweep you off your feet! Misfit is a men's grooming range with a wide array of products, from men's trimmers to hair clippers and shaving kit to more. It is time for you to pamper yourself with some self-care. The hair trimmer for men comes with a titanium blade that goes hard on the hair but is smooth as silk on the skin. Shape and style any way you want for this beard trimmer for men comes with five-length settings, making it easier to choose. Ranging from 0.5 to 12mm, the hair trimmer enables you to carve from the minutest detail to a good long beard</p>
+    <br>
+    <p>Build on that self-confidence as you choose amongst the best trimmer, whether T2000 or T50. Clean the unwanted nasal hair and give yourself a dapper look you deserve. Equipped with blades that give you supreme precision, the Misfit trimmers are here to be the best trimmer for men. Bring out the fun in you as you experiment with your looks and discover a new you every day.</p>
+    <br>
+    <p>Here's why Misfit is the best trimmer for men! You get a salon-style finish at home itself. So never worry about spending enormous amounts of money on styling before any sudden plans. Getting a power time of 120 minutes with a charge time of just 60 minutes, hear us when we say this hair clipper has got you covered! Bid goodbye to your old, messy look, as styling yourself has never been easier. So to our fellow male boAtheads, it is time for you to finally set sail and set foot at the magical shore of grooming! It is time to slay every look with Misfit - Men's Trimmer</p>
+  </div>
+</body>
+</html>
+<script src="/data/misfitGrooming.js"></script>
+
+<script>
+  var trimmer = JSON.parse(localStorage.getItem("misfitTrimmer"))
+   var cartArr = JSON.parse(localStorage.getItem("CartItems")) || [];
+
+   displayData(trimmer);
+   
+   function displayData(trimmer){
+   document.querySelector("#misfitContainer").innerHTML="";
+
+    trimmer.map(function(elem){
+
+    var mainDiv = document.createElement("div");
+
+    var image = document.createElement("div")
+    image.setAttribute("id","imageTop")
+    var img = document.createElement("img");
+    img.setAttribute("src", elem.img);
+    img.setAttribute("id","immortalImage")
+    image.append(img)
+
+    var name = document.createElement("p");
+    name.innerText = elem.name;
+    name.setAttribute("id","misfitName")
+
+    var innerDiv = document.createElement("div");
+
+    var reduceprice = document.createElement("p");
+    reduceprice.style.color = "red";
+    reduceprice.style.fontWeight = "bold";
+    reduceprice.innerText = "Rs."+elem.reducePrice;
+
+    var price = document.createElement("p");
+    price.innerText = "Rs."+ elem.price;
+    price.style.color = "darkgray";
+    price.style.textDecoration = "line-through";
+
+    innerDiv.append(reduceprice, price);
+    innerDiv.setAttribute("class", "priceDiv");
+
+    var cart = document.createElement("button");
+    cart.innerText = "Add to cart";
+    cart.setAttribute("id","misfitCart")
+    cart.addEventListener("click", function () {
+      addToCart(elem);
+    });
+
+    mainDiv.append(image, name, innerDiv,cart);
+
+    document.querySelector("#misfitContainer").append(mainDiv);
+    });
+
+   function addToCart(data){
+       console.log(data);
+       cartArr.push(data);
+       console.log(cartArr);
+       localStorage.setItem("CartItems",JSON.stringify(cartArr));
+   }
+}
+
+function sortItems(){
+  var sorting = document.getElementById("sorter").value;
+  console.log(sorting);
+  if(sorting=="h2l")
+  {trimmer.sort(function(a,b){
+      return b.reducePrice-a.reducePrice;
+  })
+  displayData(trimmer);
+  }
+  else if(sorting=="l2h")
+  {trimmer.sort(function(a,b){
+      return a.reducePrice-b.reducePrice;
+  })
+  displayData(trimmer);
+  }
+
+}
+</script>

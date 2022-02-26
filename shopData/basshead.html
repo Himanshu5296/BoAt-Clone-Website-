@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop wired earphones online</title>
+    <style>
+        body{
+        background-color: #000000;
+        }
+        #bassheadContainer{
+        display:grid;
+        grid-template-columns: repeat(3,30%);
+        grid-template-rows:repeat(2,420px);
+        gap:15px;
+        justify-content: center;
+        }
+        #bassheadContainer>div{
+        border:1px solid black;
+        border-radius: 10px;
+        background-color: white;
+        }
+        #bassheadtHeading{
+            font-family: sans-serif;
+            padding-left: 4%;
+            color:white;
+        }
+        #imageTop{
+            min-height: 255px;
+            min-width: 255px;
+            margin:auto;
+            text-align: center;
+            background-color: silver;
+            border-radius: 10px;
+        }
+        #misfitName{
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-family: sans-serif ;
+            color:red;
+            padding-left:20px;
+
+        }
+        .priceDiv{
+            width: 40%;
+            display:flex;
+            justify-content: space-between;
+            padding-left:20px;
+        }
+        #bassheadCart{
+            background-color: black;
+            color:white;
+            font-family: sans-serif;
+            border: 1px solid #000000;
+            font-weight: bold;
+            min-height: 48px;
+            border-radius: 10px;
+            min-width:40%;
+            font-size:16px;
+            margin-left:20px;
+        }
+        #bassheadBottom>h2{
+            font-size:30px;
+            text-align:center;
+            color: #9c9c9c;
+            font-family: sans-serif;
+            padding:5% 0px 2% 0px
+        }
+        #bassheadBottom>p{
+            text-align:justify;
+            color: #9c9c9c;
+            font-family: sans-serif;
+            padding:0px 5.5%;
+        }
+        #sorting{
+            text-align: right;
+            padding-right:12%;
+            margin-bottom: 1%;
+        }
+        #sorting>label{
+            padding-right: 10px;
+            font-size: 16px;
+            color: #8b8b8b;
+            text-transform: uppercase;
+            text-align: right;
+            font-family: sans-serif;
+        }
+        #sorting>select{
+            background: black;
+            font-size: 16px;
+            color: white;
+            border-color: black;
+        }
+        /* small screen */
+        @media all and (min-width:50px) and (max-width:380px){
+            #bassheadContainer{
+                display:grid;
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows:repeat(5,420px);
+            }
+        }
+        /* medium screen */
+        @media all and (min-width:381px) and (max-width:800px){
+            #bassheadContainer{
+                display:grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows:repeat(3,420px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img style="width: 100%;height: auto" 
+    src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Bassheads-_Catgry_web.jpg?v=1634717143"/>
+    <h1 id="bassheadtHeading">Wired Earphones</h1>  
+    <div id="sorting">
+        <label>SORT BY</label>
+        <select onchange="sortItems()" id="sorter">
+            <option value="">Featured</option>
+            <option value="l2h">Price, low to high</option>
+            <option value="h2l">Price, high to low</option>
+        </select>
+       </div> 
+  <div id="bassheadContainer"></div>
+
+  <div id="bassheadBottom">
+    <h2>BassHeads – Bass up Your Music with the Best Wired Earphones</h2>
+    <p> For the unconstrained, the go-getters, the unapologetically rebellious women. TRebel is a celebration of women who know their worth, and won’t let any stone unturned to go after their dreams! The ones who are defined only by their own rules. We at boAt stand to enable the Indian women of today and tomorrow with a vibrant collection of wireless earphones for women that are designed to match your stride and your attitude.</p>
+    <p> Get your chic going with bluetooth earphones for girls that never let you down, just like your goals. Powered with IPX ratings to keep you going, be it workout sweat, or rain! Vibe with only the best wireless earphones for women, that are backed by insane playback time & battery capacity so the music never stops. Stay connected every moment with Bluetooth V5.0.</p>
+    <p> Your rules, your sass, your passion, powered by BOAT’s women earbuds. For everything you need to keep the music in your life going, BOAT has your back!</p>
+</body>
+</html>
+<script src="/data/bassHead.js"></script>
+<script>
+   var basshead = JSON.parse(localStorage.getItem("bassHeadsKey"));
+   var cartArr = JSON.parse(localStorage.getItem("CartItems")) || [];
+
+   displayData(basshead);
+   
+   function displayData(bass){
+   document.querySelector("#bassheadContainer").innerHTML="";
+
+    bass.map(function(elem){
+
+    var mainDiv = document.createElement("div");
+
+    var image = document.createElement("div")
+    image.setAttribute("id","imageTop")
+    var img = document.createElement("img");
+    img.setAttribute("src", elem.image);
+    img.setAttribute("id","immortalImage")
+    image.append(img)
+
+    var name = document.createElement("p");
+    name.innerText = elem.name;
+    name.setAttribute("id","misfitName")
+
+    var innerDiv = document.createElement("div");
+
+    var reduceprice = document.createElement("p");
+    reduceprice.style.color = "red";
+    reduceprice.style.fontWeight = "bold";
+    reduceprice.innerText = "Rs."+elem.reducePrice;
+
+    var price = document.createElement("p");
+    price.innerText = "Rs."+ elem.price;
+    price.style.color = "darkgray";
+    price.style.textDecoration = "line-through";
+
+    innerDiv.append(reduceprice, price);
+    innerDiv.setAttribute("class", "priceDiv");
+
+    var cart = document.createElement("button");
+    cart.innerText = "Add to cart";
+    cart.setAttribute("id","bassheadCart")
+    cart.addEventListener("click", function () {
+      addToCart(elem);
+    });
+
+    mainDiv.append(image, name, innerDiv,cart);
+
+    document.querySelector("#bassheadContainer").append(mainDiv);
+    });
+
+   function addToCart(data){
+       console.log(data);
+       cartArr.push(data);
+       console.log(cartArr);
+       localStorage.setItem("CartItems",JSON.stringify(cartArr));
+   }
+}
+
+function sortItems(){
+  var sorting = document.getElementById("sorter").value;
+  console.log(sorting);
+  if(sorting=="h2l")
+  {basshead.sort(function(a,b){
+      return b.reducePrice-a.reducePrice;
+  })
+  displayData(basshead);
+  }
+  else if(sorting=="l2h")
+  {basshead.sort(function(a,b){
+      return a.reducePrice-b.reducePrice;
+  })
+  displayData(basshead);
+  }
+
+}
+</script>

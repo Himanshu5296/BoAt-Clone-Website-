@@ -1,0 +1,211 @@
+/* Shipping details */
+.shipping {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+}
+
+.shipping_features {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    background-color: #1C1C1C;
+    font-weight: bold;
+}
+
+.shipping_features div {
+    margin-right: 120px;
+    width: fit-content;
+}
+
+.shipping_features img {
+    height: 30px;
+    margin-right: -25px;
+}
+
+.shipping_features span {
+    text-align: center;
+}
+
+.shipping_details {
+    height: 50%;
+    text-align: center;
+    font-size: 12px;
+    color: #8f8f8f;
+    font-weight: bold;
+    background-color: #2C2C2C;
+}
+
+.shipping_details p {
+    padding-top: 10px;
+}
+
+.footer {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    height: 400px;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #868686;
+    font-weight: 500;
+}
+
+.email {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 8%;
+    /* border: 1px solid red; */
+}
+
+.shop_links, .help, .company {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+
+.email img{
+    width: 100px;
+}
+
+.email p {
+    margin-top: 30px;
+}
+
+.email input {
+    padding: 15px;
+    width: 200px;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-top: 10px;
+    outline: none;
+    color: white;
+}
+
+.subscribe {
+    padding: 12px;
+    width: 120px;
+    background-color: black;
+    color: white;
+    border: 1px solid red;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.subscribe:hover {
+    /* background-color: red; */
+    outline: none;
+}
+.footer {
+    /* border: 1px solid red; */
+   max-width: 1490px;
+   /* padding-left: 30px; */
+}
+.footer h2 {
+    color: white;
+    padding-left: 40px;
+    /* border: 1px solid red; */
+
+}
+
+.footer ul {
+    list-style: none;
+    line-height: 28px;
+    /* border: 1px solid red; */
+
+}
+
+.footer li {
+    cursor: pointer;
+    /* border: 1px solid red; */
+
+}
+.footer li:hover {
+    color: red;
+}
+
+/* Social links */
+.social_links {
+    width: 100%;
+    height: 10%;
+    color: rgb(228, 228, 228);
+    /* border: 1px solid red;s */
+    padding-top: 1%;
+    padding-left: 5%;
+    max-width: 1400px;
+    background-color: black;
+}
+.social_links i {
+    font-size: 28px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.social_links i:hover {
+    color: white;
+}
+
+.social_links div {
+    margin-left: 40px;
+}
+
+.pay_download {
+    width: 100%;
+    margin-top: 20px;
+    height: 100px;
+    display: flex;
+    /* border: 1px solid red; */
+    padding-left: 5%;
+    max-width: 1400px;
+}
+
+.pay_links {
+    margin-left: 35px;
+}
+
+.download_links {
+    color: white;
+    margin-left: 470px;
+}
+
+.download_links img {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Marquee Text starts */
+marquee {
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    background-color: black;
+}
+
+.text-hollow {
+    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+.text-white {
+    color: white;
+}
+/* Marquee Text ends */
+
+
+.bottom {
+    background-color: black;
+}
+
