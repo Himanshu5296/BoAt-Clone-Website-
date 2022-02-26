@@ -63,10 +63,10 @@
      var cvv= document.querySelector("#cvv").value;
      var expiry= document.querySelector("#expiry").value;
      var name= document.querySelector("#name").value;
-     if(cardnumber!=12345678&&cvv!=1234){
+     if(cardnumber==""&&cvv==""){
          alert("Incoorect Details");
      }else{
-        window.location.href="otp.html";
+        window.location.href="thanks.html";
      }
     })
 </script>
