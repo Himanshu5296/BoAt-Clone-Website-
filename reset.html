@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <title>Reset</title>
+    <title>Document</title>
     <style>
         *{
             font-family: sans-serif;
@@ -19,11 +19,13 @@
             text-align: center;
         }
         #email{
+            text-align: center;
             font-size:20px;
             margin-bottom: 15px;
             color: rgb(7, 6, 6);
         }
         input{
+            margin-left: 33%;
             /* text-align: center; */
             /* justify-content: center; */
            width:450px;
@@ -33,6 +35,7 @@
         }
     
         #login{
+            margin-left: 39%;
             text-align: center;
             justify-content: center;
            width:300px;
@@ -40,40 +43,36 @@
            border-radius: 20px;
            background-color: red;
            color:white;
-         
+           margin-top: 35px;
+           margin-bottom: 40px;
            font-size: 30px;
         }
         a{
+            margin-left:33%;
             font-size:25px;
             text-decoration: none;
             color:black;
-            text-align: center;
           }
         a:hover{
             color:blue;
-        }
-        #resetpass{
-            display: flex;
-            justify-content: center;
-            margin-top: 75px;
-        }
-        #cancel{
-            text-align: center;
         }
       
     </style>
 </head>
 <body>
-    <h1 id="heading" >Reset Your Password</h1>
-    <div id="resetpass">
-        <form action="" id="form">
-            <h3>We will send you an email to reset your password.</h3>
-            <div id="email" >Email</div>
-            <input id="emailed" type="email" placeholder="Enter your email here"><br>
-            <input class="btn" type="submit" id="login" value="Submit">
-        </form>
-    </div>
-    <div id="cancel"><a href="login.html">Cancel</a></div>
+    <form action="" id="form">
+        <h2 id="heading" >Reset Your Password</h2>
+        <h3>We will send you an email to reset your password.</h3>
+        <div id="email" >Email</div>
+        <input id="emailed" type="email" placeholder="Enter your email here">
+   
+   
+        <input class="btn" type="submit" id="login" value="Submit">
+        <div><a href="login.html">Cancel</a></div>
+    </form>
+     
+
+    
    </body>
 </html>
 
