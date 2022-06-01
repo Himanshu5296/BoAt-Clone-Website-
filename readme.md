@@ -1,7 +1,7 @@
 # Boat clone Website:
 
 ## Created using HTML CSS AND JS
-->This project is a clone website  of a very popular brand boat.
+->This project is a clone website  of a very popular brand boat.</br>
 ->This Website have many features inside it..
 ->You can just simply go to index.html page and click on live server for getting the homepage of this clone website.
 ->In home page you have different category of product you can add to cart any of them by clicking on add to cart button.
